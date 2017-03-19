@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+function sumOfEvenFibo() {
+	
+	var evenFibonacci = [0,2];
+	
+	var limitValue = 4000000;
+	
+	evenFibonacci[0] = 0;
+	evenFibonacci[1] = 2;
+		
+	var i = 2;
+	var x = 0;
+	var sum = evenFibonacci[0] + evenFibonacci[1];
+	
+		do{
+			x = (4 * evenFibonacci[i-1]) + evenFibonacci[i-2];
+			
+			evenFibonacci[i] = x;
+			
+			if (evenFibonacci[i] >= limitValue){
+				console.log(i + "th element of the evenFibonacci list has the greatest value before " + limitValue);
+				console.log("While Loop - Sum of the even numbers at fibonacci list: "+ sum);
+				
+				return sum;
+				
+				break;
+			}
+			else{
+				sum += evenFibonacci[i];
+			}
+			
+		}while(evenFibonacci[i++] <= limitValue);
+	
+}
+</script>
+
+<h1>Sum of the even numbers at fibonacci list below 4000000</h1>
+
+<button type="button" onclick="document.getElementById('result').innerHTML = sumOfEvenFibo()">
+Click me to display the result.
+</button>
+
+<p id="result"></p>
+
+</body>
+</html> 

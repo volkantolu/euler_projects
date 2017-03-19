@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+	function largestPrimeFactor() {
+	
+		//hundreds of billion digit - a huge number,,,,, so think about the performance
+		var number = 600851475143;
+		// "primeFactors" is a global variable
+		primeFactors = new Array();
+		var largestPrime;
+		var i = 0, c = 0;
+		
+		var x =  Math.ceil(Math.sqrt(number));
+		console.log("Square root of " + number + " is " + x);
+		
+		//looping until x (sqrt of number)
+		for (i = 2; i < x; i++) {
+			
+			//here we are getting mod of the "number"
+			if (number % i == 0 && isPrime(i)){
+				primeFactors[c] = i;
+				c++;
+				//console.log(i);
+			}
+		}
+				
+		largestPrime = getMaxOfArray(primeFactors);
+		
+		console.log("Largest Prime is: " + largestPrime);
+		
+		//enables button
+		enableButton("allPrimeFactors");
+
+		return largestPrime;
+	}
+	
+	function getMaxOfArray(arr) {
+		var length = arr.length;
+		var j = 0;
+		var max = arr[0];
+
+		for (j = 1; j < length; j++) {
+			if (arr[j] > max){		
+				max = arr[j];
+			}
+		}
+		return max;
+	}
+
+	function isPrime(x){
+		var value = true;
+		var i = 2;
+		
+		for (i = 2; i < x; i++) {
+			if (x % i == 0){
+				value = false;
+			}			
+		}
+		return value;
+	}
+
+	function listArray(arr){
+		var length = arr.length;
+		var j = 0;
+		var listElements = "List Elements are; " + "<br><br>" //+ arr[0];
+		var seperator = "";
+		
+		for (j = 0; j < length; j++) {
+			if (arr[j] != 0)
+				console.log(arr[j]);
+				seperator = ((j+1)==length)?"":", ";
+				listElements += arr[j] + seperator;
+		}
+		document.getElementById('primeFactorsList').innerHTML = listElements;
+	}
+	
+	function enableButton(x){
+		//enables button
+		document.getElementById(x).disabled = false;
+	}
+
+</script>
+
+<h1>Largest prime factor of the number 600851475143</h1>
+
+<button type="button" onclick="document.getElementById('largestPrime').innerHTML = largestPrimeFactor()">
+Click me to display the largest prime.
+</button>
+
+<p id="largestPrime"></p>
+
+<button id="allPrimeFactors" type="button" onclick="listArray(primeFactors)" disabled>
+Click me to display the all prime factors.
+</button>
+
+<p id="primeFactorsList"></p>
+
+</body>
+</html> 

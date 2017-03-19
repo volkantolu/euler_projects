@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+	function sumOfMultiples() {
+		
+		//global variable usage
+		multiplesOfList = new Array();
+		multiplesOfList[0] = 3;
+		multiplesOfList[1] = 5;
+		sizeOfMultiplesOf = multiplesOfList.length;
+		limitValue = 1000;
+		multiplesList = new Array();
+		i=1, j=0, c=0;
+				
+		//local variable usage
+		var sumOfMultiples = 0;
+		
+		//first way of solution
+		//multiplesList = generateMultiplesList_Solution1();
+		
+		//second way of solution
+		multiplesList = generateMultiplesList_Solution2();
+		
+		sumOfMultiples = sumOfArray(multiplesList);
+		console.log("The sum of these multiples is " + sumOfMultiples);
+		
+		showResult();
+		
+		//sort multiplesList
+		sortArray(multiplesList);
+		
+		//show multiplesList element count
+		console.log("Element Count of Multiples List is: " + multiplesList.length);
+		
+		listArray(multiplesList);
+		
+		//clearTags();
+		
+		return sumOfMultiples;
+		
+	}
+	
+	function generateMultiplesList_Solution1(){
+		
+		for(i = 1; i < limitValue; i++){
+			for(j = 0; j < sizeOfMultiplesOf; j++){
+				if (i % multiplesOfList[j] == 0){
+					multiplesList[c] = i;
+					c++;
+					//console.log(i);
+					break;
+					/*
+						break because if "i" is ok for any element of multiplesOfList,
+						this means exit from loop for i
+					*/
+				}
+			}// end-of inner for loop
+		}// end-of outer for loop		
+		
+		return multiplesList;
+		
+	}
+	
+	function generateMultiplesList_Solution2(){
+		
+		multiplesList = clearArray(multiplesList);
+		var min = getMinOfArray(multiplesOfList);		
+		var counter = limitValue / min;
+		var result = 0;
+		c = 0;
+
+		for(i = 0; i < sizeOfMultiplesOf; i++){
+			for (j = 1; j <= counter; j++) {
+				result = multiplesOfList[i] * j;
+				if (result < limitValue && !(isExist(result,multiplesList))){	
+					multiplesList[c] = result;
+					c++;
+				}
+			}// end-of inner for loop
+		}// end-of outer for loop
+		
+		return multiplesList;
+	}
+	
+	function isExist(result,arr) {
+		var value = false;
+		var length = arr.length;
+		var j = 0;
+		
+		for (j = 0; j < length; j++) {
+			if (arr[j] == result) {				
+				value = true;
+				//break;				
+			}
+		}
+		return value;
+	}
+
+	function clearArray(arr) {
+		var length = arr.length;
+		var j = 0;
+		
+		for (j = 0; j < length; j++) {
+			arr[j] = 0;
+		}
+		return arr;
+	}
+
+	function getMinOfArray(arr) {
+		var length = arr.length;
+		var j = 0;
+		var min = arr[0];
+
+		for (j = 1; j < length; j++) {	
+			if (arr[j] < min){	
+				min = arr[j];
+			}
+		}
+		return min;
+	}
+
+	function sumOfArray(arr){	
+		var length = arr.length;
+		var j = 0;
+		var sum = 0;
+		
+		for (j = 0; j < length; j++) {
+			sum += arr[j];
+		}
+		return sum;
+	}
+	
+	function sortArray(arr){
+		
+		var length = arr.length;
+		var j = 0, temp;
+		
+		for (j = 0; j < length; j++) {
+
+			
+			//arr is 3,2    so 3 > 3 then change their place because we must an ascending order
+			if (arr[j] > arr[j+1]){
+				
+				temp = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = temp;
+				
+			}
+			
+			
+		}//end-of for loop
+		
+		multiplesList = arr;
+		
+	}
+	
+	function listArray(arr){
+		
+		var length = arr.length;
+		var j = 0;
+		var listElements = "List Elements are; " + "<br><br>" + arr[0];
+		
+		for (j = 1; j < length; j++) {
+			if (arr[j] != 0)
+				console.log(arr[j]);
+				listElements += ", " + arr[j];
+		}
+		
+		document.getElementById('multiplesList').innerHTML = listElements;
+	}
+	
+	function clearTags(){
+		document.getElementById('sumOfMultiples').innerHTML = "";
+		document.getElementById('multiplesList').innerHTML = "";
+	}
+	
+	function showResult(){
+		document.getElementById("sumOfMultiples").style.display = "inline";
+	}
+
+</script>
+
+<h1>Sum of all the multiples of 3 or 5 below 1000</h1>
+
+<button type="button" onclick="document.getElementById('sumOfMultiples').innerHTML += sumOfMultiples()">
+Click me to display the result.
+</button>
+
+<br><br>
+
+<p id="sumOfMultiples" hidden>Sum Of Multiples is: </p>
+
+<!--
+<p id="result"></p>
+-->
+
+<p id="multiplesList"></p>
+
+</body>
+</html> 
