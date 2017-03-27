@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<TITLE>JavaScript'te döngü</TITLE>
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Javascript kodunu eski sürüm browserlardan saklayalim
+// envanter kontrolü icin degisken
+var stok = 700
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+<PRE>
+<SCRIPT LANGUAGE="JavaScript1.2">
+function hesapla(miktar)
+	{
+	var endeks, talepMiktar, satis
+
+    	endeks=miktar.selectedIndex
+    	talepMiktar=miktar.options[endeks].text
+	satis = 0
+	while (talepMiktar < stok)
+		{
+	    	stok -= talepMiktar
+		satis++
+    		}
+    	document.miktarForm.sonuc.value=talepMiktar + " ton itibariyle "+ satis + " adet siparis için stokumuz var!"
+	}
+
+</SCRIPT>
+</HEAD>
+<BODY>
+<BR>
+<FORM NAME="miktarForm">
+<P>Alacaginiz miktari lütfen seçiniz:</P>
+<SELECT NAME="miktar" onChange="hesapla(this)">
+<OPTION SELECTED> Miktari seçiniz
+<OPTION>100
+<OPTION>200
+<OPTION>300
+<OPTION>400
+</SELECT>
+<P></P>
+<INPUT NAME="sonuc" VALUE="" SIZE=55>
+</FORM>
+</BODY>
+</HTML>

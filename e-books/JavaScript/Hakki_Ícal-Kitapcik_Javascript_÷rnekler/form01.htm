@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<script LANGUAGE="JavaScript1.2">
+function denetle() { 
+	var num = document.form1.elements.length
+	var dogruMu = true
+		for (var i=0; i<num; i++) {
+			if ((document.form1.elements[i].value == null || 
+			    document.form1.elements[i].value == "") && 
+			   (typeof document.form1.elements[i] != 'submit' || 
+			    typeof document.form1.elements[i] != 'reset'))
+ { 
+				dogruMu = false 
+				alert("Formdaki " + document.form1.elements[i].name + 
+					" alani doldurulmamis bulunuyor. Lütfen doldurunuz!") 
+				break } 
+		}  
+		return dogruMu 
+	} 
+// -->
+</script>
+</head>
+
+<body>
+<form name="form1" method="POST" onSubmit="return denetle()">
+<h2>Abone Formu</h2>
+<p>Adiniz:<br>
+<input type=text size=25 maxlength=256 name="Abone_Adi"><br>
+Ilgi Alani:<br>
+<input type=text size=25 maxlength=256 name="Ilgi"><br>
+Oturdugunuz Il:<strong><br>
+</strong><input type=text size=25 maxlength=256 name="Il"><br>
+Elektronik Posta Adresiniz:<strong><br>
+</strong><input type=text size=25 maxlength=256 name="ElektronikAddress"></p>
+<h2><input type=submit value="Gönder"> <input type=reset value="Sil"></h2>
+</form>
+<p>&nbsp;</h5>
+</body>
+</html>

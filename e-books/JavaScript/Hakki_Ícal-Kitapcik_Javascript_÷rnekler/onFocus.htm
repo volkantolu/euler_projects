@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<TITLE>JavaScript'te onFocus ve onBlur</TITLE>
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Javascript kodunu eski sürüm browserlardan saklayalim
+// fonksiyonlari tanimlayalim
+function goster()
+	{
+    document.isimForm.ad.value="Adiniz kayda geçmistir."
+	}
+function uyar()
+	{
+    document.isimForm.ad.value="Lütfen yanlislik yapmayiniz!"
+	}
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+<BR>
+<FORM NAME="isimForm">
+<P>Lütfen adinizi yazin ve sayfa üzerinde baska bir yeri tiklayin:
+<BR><INPUT TYPE="text" NAME="ad" VALUE="Adinizi buraya yaziniz" SIZE=25 onBlur="goster()">
+<P>Simdi de asagidaki kutuya mesleginizi yazin:
+<BR><INPUT TYPE="text" NAME="meslek" VALUE="Mesleginizi buraya yaziniz" SIZE=25 onFocus="uyar()">
+</FORM>
+</BODY>
+</HTML>

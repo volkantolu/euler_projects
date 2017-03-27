@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<SCRIPT LANGUAGE = "JavaScript">
+<!-- Javascript kodunu eski sürüm browserlardan saklayalim
+var windowNesnesi
+function yeniPencere() {
+windowNesnesi = window.open("", "YeniPencere", "toolbar=0, width=300, height=150, resizable=1")
+windowNesnesi.document.write("<H2>Iste yeni Pencereniz.. Tebrikler!</H2>")
+}
+function kapaPencere() {
+windowNesnesi.close()
+}
+// -->
+</SCRIPT>
+<BODY OnUnload="kapaPencere()">
+<H1>Bu dügmeyi tiklarsaniz, yeni pencere açilir.</H1>
+<FORM>
+<INPUT Type="button" Value="Yeni Pencere Aç" OnClick="yeniPencere()" </INPUT>
+</FORM>
+</BODY>
+
+

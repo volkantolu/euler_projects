@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<title>Dinamik Cerceve</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<script LANGUAGE="JavaScript1.2">
+<!-- Javascript kodunu eski sürüm browserlardan saklayalim
+//fonksiyonumuzu tanimlayalim
+function belgeYazdir()
+	{
+	parent.frames[1].document.clear();
+	parent.frames[1].document.write("<HTML><HEAD>" +
+		"<TITLE>Dinamik Güncelleme Örnegi</TITLE>");
+	parent.frames[1].document.write(" </HEAD><BODY BGCOLOR=\"" +
+		document.form1.bginput.value + "\">");
+	parent.frames[1].document.write("<H1>Guncellenmis sayfa</H1>");
+	parent.frames[1].document.write("Bu sayfayi güncellestiren unsur:" + document.form1.input1.value);
+	parent.frames[1].document.write("</BODY></HTML>");
+	parent.frames[1].document.close();
+	}
+// -->
+</script>
+</head>
+
+<body>
+
+<form NAME="form1">
+  <input type="hidden" name="bginput" value="white"><p><input TYPE="text" NAME="input1"
+  size="20"> </p>
+  <p>Bir zemin rengi seçiniz:<br>
+  <input TYPE="radio" NAME="radio1" VALUE="white" CHECKED
+  onClick="document.form1.bginput.value=&quot;white&quot;">Beyaz<br>
+  <input TYPE="radio" NAME="radio1" VALUE="red"
+  onClick="document.form1.bginput.value=&quot;red&quot;">Kırmızı<br>
+  <input TYPE="radio" NAME="radio1" VALUE="blue"
+  onClick="document.form1.bginput.value=&quot;blue&quot;">Mavi<br>
+  <input TYPE="radio" NAME="radio1" VALUE="green"
+  onClick="document.form1.bginput.value=&quot;green&quot;">Yeşil<br>
+  <br>
+  <input TYPE="button" VALUE="Çerçeve 2'yi güncelle" onClick="belgeYazdir()"> </p>
+</form>
+
+<p>&nbsp;</p>
+</body>
+</html>

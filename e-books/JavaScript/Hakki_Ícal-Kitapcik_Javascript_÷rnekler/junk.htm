@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE= "JavaScript1.2">
+<!-- Javascript kodunu eski sürüm browserlardan saklayalim
+// grafiklerimizi tanimlayalim
+	var geri_outDugme = new Image( 54, 44 );
+	geri_outDugme.src = "geri_out.gif"; 
+	var geri_onDugme =  new Image( 54, 44 );
+	geri_onDugme.src = "geri_on.gif"; 		
+		
+	var ileri_outDugme = new Image( 54, 44 );
+	ileri_outDugme.src = "ileri_out.gif"; 
+	var ileri_onDugme=  new Image( 54, 44 );
+	ileri_onDugme.src = "ileri_on.gif"; 		
+		
+// degisiklik fonksiyonunu tanimlayalim
+	function highlightButton(nereye, goruntuNesne) { 
+		document.images[nereye].src = eval( goruntuNesne + ".src" )
+	} 		
+	
+//-->
+</SCRIPT>
+</HEAD>
+<BODY>
+<CENTER>
+<A HREF="javascript:history.back()"
+	onMouseOver = "highlightButton( 'geri', 'geri_onDugme' );window.status='Geri';return true;"
+	onMouseOut = "highlightButton( 'geri', 'geri_outDugme' );window.status='';return true;"> 
+	<IMG SRC="./geri_out.gif"
+		  BORDER  = 0	
+		  WIDTH   = 52
+		  HEIGHT  = 42
+		  NAME    = "geri"> 
+</A> 		  
+
+<A HREF="javascript:history.forward()"
+	onMouseOver = "highlightButton( 'ileri', 'ileri_onDugme' );window.status='Ileri';return true;"
+	onMouseOut = "highlightButton( 'ileri', 'ileri_outDugme' );window.status='';return true;"> 
+	<IMG SRC="ileri_out.gif"
+		  BORDER  = 0	
+		  WIDTH   = 52
+		  HEIGHT  = 42
+		  NAME    = "ileri"> 
+</A> 		  
+</CENTER>
+</BODY>
+</HTML>

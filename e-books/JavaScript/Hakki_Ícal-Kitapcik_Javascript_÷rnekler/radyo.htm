@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Radyo Dugmesi Örnegi</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<SCRIPT LANGUAGE = "JavaScript1.2">
+function radyoDegeri(radyoNesnesi) {
+var deger = null
+for (var i=0; i<radyoNesnesi.length; i++) {
+if (radyoNesnesi[i].checked) {
+deger = radyoNesnesi[i].value
+break }
+}
+return deger
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM name="form1">
+<p><input type=radio name="sanatci" value="Türkü">Neset Ertas</p>
+<p><input type=radio name="sanatci" value="Sarki">Zeki Müren</p>
+<p><input type=radio name="sanatci" value="Pek anlamadim!">Sezen Aksu</p>
+<input type=button value="Ne tür müzik seviyorum?"
+onClick="alert(radyoDegeri(this.form.sanatci))">
+</FORM>
+</BODY>
+</HTML>

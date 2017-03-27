@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<title>Döviz Degeri Çevirme Ornegi</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<script LANGUAGE="JavaScript1.2">
+
+function hesapla() {
+	TL = document.form1.doviz.value * document.form1.miktar.value
+	document.form1.TL.value= TL
+}
+
+</script>
+</head>
+
+<body>
+<form name="form1">
+<PRE><FONT FACE="verdana, arial, helvetica" SIZE=2>
+
+<p><font color="#FF0000"><strong><big><big>
+	DÖVİZ ÇEVİRME:</big></big></strong></font></p>
+<p>
+	Herhangi bir dövizi Türk Lirasına çevirmek için</p>
+<p>
+	önce buraya pariteyi yazınız:
+		<input type="text" name="doviz" size="15">TL.</p>
+<p>
+	Sonra; buraya çevrilecek Döviz miktarını yazınız:
+		<input TYPE="text" NAME="miktar" SIZE="11"></p>
+<div align="center"><p><input TYPE="BUTTON" name="hesap" value="Hesapla" onClick="hesapla()"></p></div>
+
+  <p>Yazdığınız miktarda dövizin değeri
+		<input TYPE="text" NAME="TL" SIZE="14"> TL'dır.</p>
+</FONT>
+</PRE>
+</FORM>
+</html>
