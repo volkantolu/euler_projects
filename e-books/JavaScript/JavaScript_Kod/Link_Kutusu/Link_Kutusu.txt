@@ -1,0 +1,12 @@
+<body> </body>  taglarý arasýna aþaðýdaki java kodunu yazýn !
+-------------------------------------------------------------
+
+<form>
+    <p><select name="list" size="1">
+        <option selected value="http://www.krasit.cjb.net">Krasitonline</option>
+        <option value="http://www.google.com">Google.com</option>
+        <option value="http://www.netscape.com">Netscape</option>
+        <option value="http://www.microsoft">Microsoft</option>
+    </select><input type="button" value="Týklayýn !"
+    onclick="top.location.href=this.form.list.options[this.form.list.selectedIndex].value"></p>
+</form>

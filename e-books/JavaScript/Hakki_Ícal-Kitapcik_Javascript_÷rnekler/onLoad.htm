@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<TITLE>JavaScript'te onLoad</TITLE>
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Javascript kodunu eski sürüm browserlardan saklayalim
+// hangiBrowser fonksiyonunu tanimlayalim: 
+var browser=navigator.appName + " " + navigator.appVersion;
+var getkey=browser.substring(0, 12);
+function hangiBrowser()
+	{
+	if (browser.substring(0, 8)=="Netscape")
+	 	window.location="netscape4.htm";
+   	if (browser.substring(0, 9)=="Microsoft")
+		window.location="ie.htm";
+   	if ( (browser.substring(0, 8)!="Netscape") && (browser.substring(0, 9)!="Microsoft") )
+		window.location="belirsiz.htm";
+	}
+// -->
+</script>
+</head>
+<body onLoad=hangiBrowser()>
+</body>
+</html>

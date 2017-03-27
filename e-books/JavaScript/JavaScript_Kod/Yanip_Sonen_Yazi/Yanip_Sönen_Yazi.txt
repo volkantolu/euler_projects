@@ -1,0 +1,13 @@
+<SCRIPT language="JavaScript"><!--- 
+var yazi = "STATUS BARDA YANIP SÖNEN YAZI"; 
+var hiz = 150; 
+var control = 1; 
+function flash() 
+{if (control == 1) 
+{window.status=yazi; control=0;} 
+else 
+{window.status=""; control=1;} 
+setTimeout("flash();",hiz);} 
+// --></SCRIPT> 
+
+<BODY OnLoad="flash();"> 

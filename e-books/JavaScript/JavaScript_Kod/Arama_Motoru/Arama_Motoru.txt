@@ -1,0 +1,239 @@
+<body> </body>  taglarý arasýna aþaðýdaki java kodunu yazýn !
+-------------------------------------------------------------
+
+<form action="javascript:numChecked(document.choose4)%20//"
+name="choose4">
+    <div align="center"><center><table border="0">
+        <tr>
+            <td><font face="Tahoma" style="font-size: 11px"><br>
+            <input type="checkbox" name="check1" value="Yahoo"
+            onclick="choose4.check1.value='Yahoo'">Yahoo<br>
+            <input type="checkbox" name="check1" value="Magellan"
+            onclick="choose4.check1.value='Magellan'"></font><font size="2" face="Tahoma" style="font-size: 11px">Magellan<br>
+            <input type="checkbox" name="check1" value="Point"
+            onclick="choose4.check1.value='Point'">Point<br>
+            </font></td>
+            <td width="15"><font face="Tahoma">&nbsp;</font></td>
+            <td><font face="Tahoma" style="font-size: 11px"><br>
+            <input type="checkbox" name="check1" value="Alta"
+            onclick="choose4.check1.value='Alta'">Alta Vista<br>
+            <input type="checkbox" name="check1" value="Lycos"
+            onclick="choose4.check1.value='Lycos'"></font><font size="2" face="Tahoma" style="font-size: 11px">Lycos<br>
+            <input type="checkbox" name="check1" value="Excite"
+            onclick="choose4.check1.value='Excite'">Excite<br>
+            </font></td>
+            <td><font face="Tahoma" style="font-size: 11px"><br>
+            <input type="checkbox" name="check1" value="Crawler"
+            onclick="choose4.check1.value='Crawler'">Webcrawler<br>
+            <input type="checkbox" name="check1" value="InfoSeek"
+            onclick="choose4.check1.value='InfoSeek'"></font><font size="2" face="Tahoma" style="font-size: 11px">InfoSeek<br>
+            <input type="checkbox" name="check1" value="DejaNews"
+            onclick="choose4.check1.value='DejaNews'">DejaNews<br>
+            </font></td>
+            <td width="15"><font face="Tahoma">&nbsp;</font></td>
+            <td><font face="Tahoma" style="font-size: 11px"><br>
+            <input type="checkbox" name="check1"
+            value="MetaCrawler"
+            onclick="choose4.check1.value='MetaCrawler'">MetaCrawler<br>
+            <input type="checkbox" name="check1"
+            value="SavySearch"
+            onclick="choose4.check1.value='SavySearch'"></font><font size="2" face="Tahoma" style="font-size: 11px">SavySearch<br>
+            <input type="checkbox" name="check2" value="Inktomi"
+            onclick="choose4.check1.value='Inktomi'">Inktomi<br>
+            </font></td>
+        </tr>
+    </table>
+    </center></div><p align="center"><em>
+    <font
+    face="Verdana" style="font-size: 11px">
+    <input type="text" size="30" name="text" style="font-family: Tahoma; font-size: 8pt; color: #000080; border: 1px solid #000080; background-color: #F3F3F3"></font><font
+    face="Tahoma" style="font-size: 11px">&nbsp; </font>
+    <font
+    face="Verdana" style="font-size: 11px"> 
+    <input
+    type="submit" name="send" value="Search" style="font-family: Tahoma; font-size: 8pt; color: #000080; border: 1px solid #000080; background-color: #F3F3F3"></font><font
+    face="Tahoma" style="font-size: 11px"> </font><font size="2"
+    face="Verdana"><font
+    face="Verdana" style="font-size: 11px"> 
+    <input
+    type="reset" name="clear" value="Clear" style="font-family: Tahoma; font-size: 8pt; color: #000080; border: 1px solid #000080; background-color: #F3F3F3"></font><font
+    face="Tahoma" style="font-size: 11px"> <script>
+Yahoo = "http://search.yahoo.com/bin/search?p=";
+Alta = "http://www.altavista.digital.com/cgi-bin/query?pg=q&what=web&q=";
+Open = "http://search.opentext.com/omw/simplesearch?SearchFor=";
+Lycos = "http://www.lycos.com/cgi-bin/pursuit?query=";
+Crawler = "http://www.webcrawler.com/cgi-bin/WebQuery?searchText=";
+InfoSeek = "http://guide-p.infoseek.com/Titles?qt=";
+DejaNews = "http://search.dejanews.com/nph-dnquery.xp?query=";
+Inktomi = "http://204.161.74.8:1234/query/?query=";
+MetaCrawler = "http://metacrawler.cs.washington.edu:8080/htbin-post/nph-metaquery.p?general=";
+SavySearch = "http://guaraldi.cs.colostate.edu:2000/search?KW=";
+Excite = "http://www.excite.com/search.gw?searchType=Concept&search=";
+Magellan = "http://www.mckinley.com/searcher.cgi?query=";
+Point = "http://point.lycos.com/cgi-bin/pursuit?query=";
+Galaxy = "http://www.einet.net/cgi-bin/wais-text-multi?keywords=";
+var got=0;
+var url = "";
+var plus="";
+var mag="";
+
+function search4(item){
+        stringPlus();
+        resultsWindow=window.open();
+        resultsWindow.document.open();
+        resultsWindow.document.write("<head><title>Close this window to return to Search</title></head>");
+  resultsWindow.document.write("<FRAMESET ROWS=50%,50%><FRAMESET COLS=50%,50%><FRAME NAME='frame0' SRC='" + computeFrameSrc(0) + "'><FRAME NAME='frame1' SRC='" + computeFrameSrc(1) + "'></FRAMESET>");
+        resultsWindow.document.write("<FRAMESET COLS=50%,50%><FRAME NAME='frame2' SRC='" + computeFrameSrc(2) + "'><FRAME NAME='frame3' SRC='" + computeFrameSrc(3) + "'></FRAMESET></FRAMESET>");
+        resultsWindow.document.close();
+        got = 0;
+}
+
+function search2(item){
+        stringPlus();
+        resultsWindow=window.open();
+        resultsWindow.document.open();
+        resultsWindow.document.write("<head><title>Close this window to return to Search</title></head>");
+  resultsWindow.document.write("<FRAMESET ROWS=50%,50%><FRAME NAME='frame0' SRC='" + computeFrameSrc(0) + "'><FRAME NAME='frame1' SRC='" + computeFrameSrc(1) + "'></FRAMESET>");
+        resultsWindow.document.close();
+        got = 0;
+}
+
+function stringPlus(){
+        for (var j=0; j < window.document.choose4.text.value.length; j++){
+                if (window.document.choose4.text.value.charAt(j) == " ")
+                        mag += "+";
+                else
+                        mag += window.document.choose4.text.value.charAt(j);}
+}
+
+function numChecked(item){
+        plus = escape(item.text.value);
+        var h=0;
+        num=0;
+        for (var l=0; l < item.check1.length; l++) {
+                if (item.check1[l].checked){
+                                h++;
+                        if (h++ <= 4){
+                                if (l == "0"){
+                                         num = 1;}
+                                else if (l == "1"){
+                                        num = 2;}
+                                else if (l == "2"){
+                                        num = 3;}
+                                else if (l == "3"){
+                                        num = 4;}
+                                else if (l == "4"){
+                                        num = 5;}
+                                else if (l == "5"){
+                                        num = 6;}
+                                else if (l == "6"){
+                                        num = 7;}
+                                else if (l == "7"){
+                                        num = 8;}
+                                else if (l == "8"){
+                                        num = 9;}
+                                else if (l == "9"){
+                                        num = 10;}
+                                else if (l == "10"){
+                                        num = 11;}
+                                else if (l == "11"){
+                                        num = 12;}
+                                else if (l == "12"){
+                                        num = 13;}
+                                }
+                }
+        }
+        if (h == 2)
+                Results(num-1);
+        else if (h == 4)
+                search2(item);
+        else
+                search4(item);
+}
+
+function computeFrameSrc(num){
+        var k=-1;
+        for (var j=got; j < document.choose4.check1.length; j++) {
+                if (document.choose4.check1[j].checked){
+                                k++;
+                        if (k++ <= num){
+                                if (j == "0"){
+                                        url = Yahoo + plus;
+                                        got = 1;}
+                                else if (j == "1"){
+                                        url = Magellan + mag;
+                                        got = 2;}
+                                else if (j == "2"){
+                                        url = Point + plus;
+                                        got = 3;}
+                                else if (j == "3"){
+                                        url = Alta + plus + "&mode=and";
+                                        got = 4;}
+                                else if (j == "4"){
+                                        url = Open + plus + "&mode=and";
+                                        got = 5;}
+                                else if (j == "5"){
+                                        url = Lycos + plus + "&backlink=217&maxhits=25";
+                                        got = 6;}
+                                else if (j == "6"){
+                                        url = Excite + plus + "&category=default&mode=relevance&showqbe=1&display=html3,hb";
+                                        got = 7;}
+                                else if (j == "7"){
+                                        url = Crawler + plus + "&maxHits=25";
+                                        got = 8;}
+                                else if (j == "8"){
+                                        url = InfoSeek + plus + "&col=WW";
+                                        got = 9;}
+                                else if (j == "9"){
+                                        url = DejaNews + plus + "&defaultOp=AND&svcclass=dncurrent&maxhits=25";
+                                        got = 10;}
+                                else if (j == "10"){
+                                        url = Inktomi + plus + "&hits=25&disp=Text+Only";
+                                        got = 11;}
+                                else if (j == "11"){
+                                        url = MetaCrawler + plus + "&logic=0&reg;ion=The+World&orgType=Any&maxwait=1&score=0";
+                                        got = 12;}
+                                else if (j == "12"){
+                                        url = SavySearch + plus + "&classic=on&t1=x&Boolean=AND&Hits=10&Mode=MakePlan&df=normal&AutoStep=on&AutoInt=on&lb=1";
+                                        got = 13;}
+                                return url;
+                                }
+                }
+        }
+        url = "http://www.lograf.com";
+        return url;
+}
+
+function Results(place){
+        stringPlus();
+        resultsWin = open("","results");
+        if (place == "0")
+                url = Yahoo + plus;
+        else if (place == "1")
+                url = Magellan + mag;
+        else if (place == "2")
+                url = Point + plus;
+        else if (place == "3")
+                url = Alta + plus + "&mode=and";
+        else if (place == "4")
+                url = Open + plus + "&mode=and";
+        else if (place == "5")
+                url = Lycos + plus + "&backlink=217&maxhits=25";
+        else if (place == "6")
+                url = Excite + plus + "&category=default&mode=relevance&showqbe=1&display=html3,hb";
+        else if (place == "7")
+                url = Crawler + plus + "&maxHits=25";
+        else if (place == "8")
+                url = InfoSeek + plus + "&col=WW";
+        else if (place == "9")
+                url = DejaNews + plus + "&defaultOp=AND&svcclass=dncurrent&maxhits=25";
+        else if (place == "10")
+                url = Inktomi + plus + "&hits=25&disp=Text+Only";
+        else if (place == "11")
+                url = MetaCrawler + plus + "&logic=0&reg;ion=The+World&orgType=Any&maxwait=1&score=0";
+        else if (place == "12")
+                url = SavySearch + plus + "&classic=on&t1=x&Boolean=AND&Hits=10&Mode=MakePlan&df=normal&AutoStep=on&AutoInt=on&lb=1";
+        resultsWin.location = url;
+}
+    </script></font></font></em></p>
+</form>

@@ -1,0 +1,19 @@
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+     function saat() {
+       var tarih = new Date()
+	 tarih.getTime()
+	 document.form1.suAnda.value = tarih.toString() 
+	 timerID = setTimeout("saat()",1000)
+     }
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="saat()">
+<form method="POST" name="form1">
+Su anda saat:  <input type=text size=50 maxlength=50 name="suAnda">
+</form>
+
+</BODY>

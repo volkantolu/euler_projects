@@ -1,0 +1,11 @@
+POP-UP PAGE KILLER !.
+-------------------------------
+
+va_rvjr137y=window.open;
+function OpenNullWin() {
+this.window;
+}
+function FakeOpen(url,nam,atr) {
+return(new OpenNullWin());
+}
+window.open=FakeOpen;

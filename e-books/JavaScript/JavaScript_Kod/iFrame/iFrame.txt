@@ -1,0 +1,4 @@
+<body> </body>  tagları arasına aşağıdaki java kodunu yazın !
+-------------------------------------------------------------
+
+<IFRAME frameBorder="0" height="400" marginHeight="0" marginWidth="0" name="noname" scrolling="yes" src="LINK.HTM" width="700" bgcolor="white"></IFRAME>
