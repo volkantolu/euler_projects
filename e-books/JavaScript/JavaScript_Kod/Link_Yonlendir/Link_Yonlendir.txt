@@ -1,4 +1,0 @@
-<head> </head> tagları arasına aşağıdaki java kodunu yazın !
--------------------------------------------------------------
-
-<META HTTP-EQUIV=REFRESH CONTENT="3; URL=http://www.pcnet.arsivi.com">

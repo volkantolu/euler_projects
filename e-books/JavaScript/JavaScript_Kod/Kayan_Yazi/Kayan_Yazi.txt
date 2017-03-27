@@ -1,8 +1,0 @@
-<body> </body>  taglarý arasýna aþaðýdaki java kodunu yazýn !
--------------------------------------------------------------
-
-function marquee(myText)
-{ textlen=myText.length; newText=myText.substring(2,textlen)+myText.substring(0,2); 
-window.status=newText;
-setTimeout("marquee('"+newText+"')", 150); } 
-marquee("MESAJINIZI BURAYA YAZIN");
